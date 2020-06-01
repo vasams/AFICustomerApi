@@ -1,19 +1,20 @@
 ﻿using AfiCustomerApi.Data.Models;
 using System;
+using System.Threading.Tasks;
 
 namespace AfiCustomerApi.Services
 {
     public class AfiCustomerService : IAfiCustomerService
     {
-        public int RegisterAfiCustomer(AfiCustomer customer)
+        public async Task<int> RegisterAfiCustomer(AfiCustomer customer)
         {
-            throw new NotImplementedException();
+            return await Task.FromResult(10);
         }
     }
 
     public interface IAfiCustomerService
     {
         //some result
-        int RegisterAfiCustomer(AfiCustomer customer);
+        Task<int> RegisterAfiCustomer(AfiCustomer customer);
     }
 }
