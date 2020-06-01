@@ -1,4 +1,5 @@
 ﻿using AfiCustomerApi.Data.Context;
+using AfiCustomerApi.Data.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +17,8 @@ namespace AfiCustomerApi.Data
             {
                 options.UseSqlServer(configuration.GetConnectionString("AfiCustomerDbString"));
             });
+
+            services.AddTransient<IAfiCustomerRepository, AfiCustomerRepository>();
         }
     }
 }

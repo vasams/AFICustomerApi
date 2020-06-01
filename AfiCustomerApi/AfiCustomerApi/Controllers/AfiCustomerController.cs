@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AfiCustomerApi.Data.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -19,11 +20,11 @@ namespace AfiCustomerApi.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
-        public async Task<int> Get()
+        [HttpPost]
+        public async Task<int> RegisterCustomer([FromBody] AfiCustomer customer)
         {
-          return await Task.Run( () =>
-              {
+            return await Task.Run(() =>
+            {
                 return 1;
             });
         }
