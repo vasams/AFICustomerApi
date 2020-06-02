@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AfiCustomerApi.Data.Models;
+using AfiCustomerApi.Services;
+using AfiCustomerApi.Services.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -14,19 +16,28 @@ namespace AfiCustomerApi.Controllers
     {
         
         private readonly ILogger<AfiCustomerController> _logger;
-
-        public AfiCustomerController(ILogger<AfiCustomerController> logger)
+        private readonly IAfiCustomerService _afiCustomerService;
+        private readonly IAfiCustomerValidationService _afiCustomerValidationService;
+        public AfiCustomerController(IAfiCustomerService afiCustomerService,
+                                    IAfiCustomerValidationService afiCustomerValidationService,
+                                    ILogger<AfiCustomerController> logger)
         {
+            _afiCustomerService = afiCustomerService;
+            _afiCustomerValidationService = afiCustomerValidationService;
             _logger = logger;
         }
 
         [HttpPost]
         public async Task<int> RegisterCustomer([FromBody] AfiCustomer customer)
         {
-            return await Task.Run(() =>
+           if(await _afiCustomerValidationService.ValidateCustomerEntity(customer))
             {
-                return 1;
-            });
+                return await _afiCustomerService.RegisterAfiCustomer(customer);
+            }
+           else
+            {
+                return await Task.FromResult(-1);
+            }
         }
     }
 }

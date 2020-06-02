@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AfiCustomerApi.Data", "AfiC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AfiCustomerApi.Services", "AfiCustomerApi.Services\AfiCustomerApi.Services.csproj", "{077FCFB2-A3BD-481A-BED9-659C590D2630}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AfiCustomerApiServicesTests", "AfiCustomerApiServicesTests\AfiCustomerApiServicesTests.csproj", "{59C6577C-4DD7-41D5-B6A8-3B4A7EAE9689}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{077FCFB2-A3BD-481A-BED9-659C590D2630}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{077FCFB2-A3BD-481A-BED9-659C590D2630}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{077FCFB2-A3BD-481A-BED9-659C590D2630}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59C6577C-4DD7-41D5-B6A8-3B4A7EAE9689}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59C6577C-4DD7-41D5-B6A8-3B4A7EAE9689}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59C6577C-4DD7-41D5-B6A8-3B4A7EAE9689}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59C6577C-4DD7-41D5-B6A8-3B4A7EAE9689}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

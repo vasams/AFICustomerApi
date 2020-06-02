@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AfiCustomerApi.Data;
+using AfiCustomerApi.Services;
+using AfiCustomerApi.Services.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -26,6 +28,9 @@ namespace AfiCustomerApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddTransient<IAfiCustomerService, AfiCustomerService>();
+            services.AddTransient<IAfiCustomerValidationService, AfiCustomerValidationService>();
 
             services.ConfigureDataBaseApi(Configuration);
         }
