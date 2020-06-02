@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 
 namespace AfiCustomerApi
 {
@@ -32,6 +33,11 @@ namespace AfiCustomerApi
             services.AddTransient<IAfiCustomerService, AfiCustomerService>();
             services.AddTransient<IAfiCustomerValidationService, AfiCustomerValidationService>();
 
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "AfiCustomerApi", Version = "v1" });
+            });
+
             services.ConfigureDataBaseApi(Configuration);
         }
 
@@ -42,6 +48,15 @@ namespace AfiCustomerApi
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "AfiCustomerApi V1");
+                c.RoutePrefix = string.Empty;
+            });
 
             app.UseRouting();
 

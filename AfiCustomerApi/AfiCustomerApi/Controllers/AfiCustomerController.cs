@@ -6,6 +6,7 @@ using AfiCustomerApi.Data.Models;
 using AfiCustomerApi.Services;
 using AfiCustomerApi.Services.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Logging;
 
 namespace AfiCustomerApi.Controllers
@@ -26,8 +27,10 @@ namespace AfiCustomerApi.Controllers
             _afiCustomerValidationService = afiCustomerValidationService;
             _logger = logger;
         }
+       
 
         [HttpPost]
+        [Route("RegisterCustomer")]
         public async Task<int> RegisterCustomer([FromBody] AfiCustomer customer)
         {
            if(await _afiCustomerValidationService.ValidateCustomerEntity(customer))

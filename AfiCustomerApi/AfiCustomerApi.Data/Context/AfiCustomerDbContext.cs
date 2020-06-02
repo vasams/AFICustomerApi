@@ -12,9 +12,10 @@ namespace AfiCustomerApi.Data.Context
         {
 
         }
-        public DbSet<AfiCustomer> AfiCustomers;
+        public DbSet<AfiCustomer> AfiCustomer { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+          
             modelBuilder.Entity<AfiCustomer>().HasKey(cust => cust.AfiCustomerID);
             modelBuilder.Entity<AfiCustomer>().Property(cust => cust.SurName).HasMaxLength(50).IsRequired();
             modelBuilder.Entity<AfiCustomer>().Property(cust => cust.FirstName).HasMaxLength(50).IsRequired();
