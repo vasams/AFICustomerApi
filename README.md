@@ -11,5 +11,5 @@ The 'AfiCustomerApi' Solution is divided into four projects:
 
 Return Values from the RegisterCustomer endpoint:
 1. The Api returns a newly generated ID of the Customer in the Database, if succesfully added in to the database.
-2. The Api returns a value of -1 if the validation of the Customer fails.
-3. The Api returns a value of -2 if there is a problem in the creation of the Customer in the database. 
+2. The Api returns a value of -1, if validation of the Customer rules fail.
+3. The Api returns a value of -2, if there is a problem in the creation of the Customer in the database. 
