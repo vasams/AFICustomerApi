@@ -10,6 +10,6 @@ The 'AfiCustomerApi' Solution is divided into four projects:
 4. AfiCustomerApiServicesTests: Contains the Validator service tests in xunit.Checks the Validation service for various scenarios.
 
 Return Values from the RegisterCustomer endpoint:
-1. The Api returns a newly genrated ID of the Customer if succesfully regsitered.
+1. The Api returns a newly generated ID of the Customer in the Database, if succesfully added in to the database.
 2. The Api returns a value of -1 if the validation of the Customer fails.
 3. The Api returns a value of -2 if there is a problem in the creation of the Customer in the database. 
