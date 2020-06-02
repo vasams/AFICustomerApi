@@ -1,6 +1,5 @@
 ﻿using AfiCustomerApi.Data.Models;
 using AfiCustomerApi.Data.Repository;
-using System;
 using System.Threading.Tasks;
 
 namespace AfiCustomerApi.Services
@@ -20,7 +19,6 @@ namespace AfiCustomerApi.Services
 
     public interface IAfiCustomerService
     {
-        //some result
         Task<int> RegisterAfiCustomer(AfiCustomer customer);
     }
 }

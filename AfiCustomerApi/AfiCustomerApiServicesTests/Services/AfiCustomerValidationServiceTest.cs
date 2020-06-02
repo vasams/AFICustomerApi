@@ -4,9 +4,9 @@ using AutoFixture;
 using System;
 using System.Threading.Tasks;
 using Xunit;
+
 namespace AfiCustomerApiServicesTests.Services
-{
-    
+{ 
     public class AfiCustomerValidationServiceTest
     {
         public readonly Fixture _fixture;

@@ -1,8 +1,6 @@
 ﻿using AfiCustomerApi.Data.Context;
 using AfiCustomerApi.Data.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace AfiCustomerApi.Data.Repository
@@ -16,17 +14,22 @@ namespace AfiCustomerApi.Data.Repository
         }
         public async Task<int> CreateAfiCustomer(AfiCustomer customer)
         {
-            try
+            var result = await Task.Run(() =>
             {
-                _context.AfiCustomer.Add(customer);
-                 _context.SaveChanges();
-            }
-            catch(Exception ex)
-            {
-                return -1;
-            }
-            var Id = customer.AfiCustomerID;
-            return Id;
+                try
+                {
+                    _context.AfiCustomer.Add(customer);
+                    _context.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    //if error return -2
+                    return -2;
+                }
+                var Id = customer.AfiCustomerID;
+                return Id;
+            });
+            return result;     
         }
     }
 
