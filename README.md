@@ -4,7 +4,7 @@ The Rest API contains one endpoint called api/AfiCustomer/RegisterCustomer. This
 
 The 'AfiCustomerApi' Solution is divided into four projects:
 1. AfiCustomerApi: Contains the Controller class with above mentioned endpoint.The "Appsettings.Development" json file holds the     "ConnectionStrings" configuration for the Database.The name of the Configuration is "AfiCustomerDbString". It needs to be configured for  each individual machine. 
-2. AfiCustomerApi.Data: Contains the Models,Repository and DBContext classes.
+2. AfiCustomerApi.Data: Contains the Models,Repository and DBContext classes.The migrations specify an intial Identity value for the AfiCustomerID to be 1000.
 3. AfiCustomerApi.Services: Contains the Validation service for the customer and the Customer Service for persisting the data in to
    database.Also, contains the migrations for the entities persisted into SQLServer instance.
 4. AfiCustomerApiServicesTests: Contains the Validator service tests in xunit.Checks the Validation service for various scenarios.
