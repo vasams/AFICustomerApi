@@ -1,6 +1,7 @@
 # AfiCustomerApi
 A .net core 3.1 REST Api with a single endpoint for registering a customer in SQL Serve Database. The Api makes use of entityframework core for persisting the data in to database. The Controller uses several Services in the services project for validating customer entity and transferring data into repositories. The Data project contains the DBContext for communicating with the Database and the Repository for Creating the specific user.
 The Rest API contains one endpoint called api/AfiCustomer/RegisterCustomer. This takes a AfiCustomer Object as it argument.
+The AfiCustomerApi is supported by the Swagger UI to easily test the endpoint.
 
 The 'AfiCustomerApi' Solution is divided into four projects:
 1. AfiCustomerApi: Contains the Controller class with above mentioned endpoint.The "Appsettings.Development" json file holds the     "ConnectionStrings" configuration for the Database.The name of the Configuration is "AfiCustomerDbString". It needs to be configured for  each individual machine. 
